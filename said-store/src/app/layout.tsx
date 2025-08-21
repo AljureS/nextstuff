@@ -1,9 +1,8 @@
-"use client";
-import type { Metadata } from "next";
+
+
 import localFont from "next/font/local";
-import "./globals.css";
-import Link from "next/link";
-import { Header } from "./components/header";
+import { Header } from "./components/shared/header";
+import { Footer } from "./components/shared/footer";
 
 
 const geistSans = localFont({
@@ -27,13 +26,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log('Hola mundo layout');
   
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header/>
         {children}
+        <Footer />
       </body>
     </html>
   );
